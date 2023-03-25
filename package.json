@@ -1,15 +1,15 @@
 {
-  "name": "cleanway-skeleton",
-  "version": "1.0.1",
-  "description": "Write YourTest cases, fail fast and have a nice journey in the Node.js galaxy.",
+  "name": "@raccoons-co/genera",
+  "version": "0.0.1",
+  "description": "Abstractions on top of Typescript 5.0.",
   "keywords": [
     "TypeScript",
     "Library",
     "Template"
   ],
-  "homepage": "https://github.com/raccoons-co/cleanway-skeleton#readme",
+  "homepage": "https://github.com/raccoons-co/genera#readme",
   "bugs": {
-    "url": "https://github.com/raccoons-co/cleanway-skeleton/issues"
+    "url": "https://github.com/raccoons-co/genera/issues"
   },
   "license": "MIT",
   "author": "Raccoons <info@raccoons.co>",
@@ -20,7 +20,7 @@
   "types": "lib/main/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raccoons-co/cleanway-skeleton.git"
+    "url": "git+https://github.com/raccoons-co/genera.git"
   },
   "scripts": {
     "build": "tsc",

@@ -1,6 +1,6 @@
 import {CleanWayBuilder} from "@raccoons-co/cleanway";
-import YourTest from "./YourTest";
+import TypesTest from "./TypesTest";
 
 CleanWayBuilder.instance()
-    .assign(new YourTest())
+    .assign(new TypesTest())
     .build();
