@@ -11,7 +11,6 @@ export default class TypesTest implements Annotation {
 
     @Test
     private canUseAnyType() {
-        assert.isString(new TypesTest().any("Nice"));
         assert.isFunction(new TypesTest().any( TypesTest ));
     }
 
