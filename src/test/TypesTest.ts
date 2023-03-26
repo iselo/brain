@@ -1,4 +1,5 @@
-import {Immutable, Test} from "@raccoons-co/cleanway";
+import {Test} from "@raccoons-co/cleanway";
+import {Immutable} from "@raccoons-co/ethics"
 import {assert} from "chai";
 import {Annotation, Any, Class, Method} from "../main/index";
 
