@@ -1,11 +1,10 @@
 {
   "name": "@raccoons-co/genera",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Abstractions on top of Typescript 5.0.",
   "keywords": [
     "TypeScript",
-    "Library",
-    "Template"
+    "Abstraction"
   ],
   "homepage": "https://github.com/raccoons-co/genera#readme",
   "bugs": {
@@ -31,11 +30,9 @@
     "pretest": "npm run build",
     "test": "node lib/test/EntryPoint"
   },
-  "dependencies": {
-    "@raccoons-co/ethics": "0.1.1"
-  },
   "devDependencies": {
     "@raccoons-co/cleanway": "^1.0.1",
+    "@raccoons-co/ethics": "^0.2.0",
     "@types/chai": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
