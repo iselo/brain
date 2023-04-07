@@ -1,28 +1,24 @@
 import {Test} from "@raccoons-co/cleanway";
 import {Immutable} from "@raccoons-co/ethics"
 import {assert} from "chai";
-import {Annotation, Any, Class, Method} from "../main/index";
+import {Any, Class, Method} from "../main/index";
 
 @Immutable
-export default class TypesTest implements Annotation {
-
-    decorator(): Method {
-        return this.method;
-    }
+export default class TypesTest {
 
     @Test
     private canUseAnyType() {
-        assert.isFunction(new TypesTest().any( TypesTest ));
+        assert.isFunction(new TypesTest().any(TypesTest));
     }
 
     @Test
     private canUseClassType() {
-        assert.isFunction(new TypesTest().class( TypesTest ));
+        assert.isFunction(new TypesTest().class(TypesTest));
     }
 
     @Test
     private canUseMethodType() {
-        assert.isFunction(new TypesTest().method( new TypesTest().any ));
+        assert.isFunction(new TypesTest().method(new TypesTest().any));
     }
 
     public any(value: Any): Any {

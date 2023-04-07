@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/genera",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Abstractions on top of Typescript 5.0.",
   "keywords": [
     "TypeScript",
@@ -31,16 +31,16 @@
     "test": "node lib/test/EntryPoint"
   },
   "devDependencies": {
-    "@raccoons-co/cleanway": "^1.0.1",
-    "@raccoons-co/ethics": "^0.2.0",
+    "@raccoons-co/cleanway": "^2.0.1",
+    "@raccoons-co/ethics": "^0.2.2",
     "@types/chai": "^4.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
     "chai": "^4.3.7",
-    "eslint": "^8.36.0",
+    "eslint": "^8.37.0",
     "npm-package-json-lint": "^6.4.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=16.x"
