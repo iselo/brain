@@ -1,5 +1,6 @@
 import Method from "./Method";
+import Any from "./Any";
 
 export default interface Annotation {
-    decorator(): Method;
+    decorator(...args: Any[]): Method;
 }
