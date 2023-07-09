@@ -3,6 +3,6 @@ import TypesTest from "./TypesTest";
 import AnnotationTest from "./AnnotationTest";
 
 CleanWayBuilder.instance()
-    .assign(new TypesTest())
-    .assign(new AnnotationTest())
+    .use(TypesTest)
+    .use(AnnotationTest)
     .build();

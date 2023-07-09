@@ -1,35 +1,26 @@
-import {Test} from "@raccoons-co/cleanway";
-import {Immutable} from "@raccoons-co/ethics"
+import {Test, TestClass} from "@raccoons-co/cleanway";
+import {Immutable} from "@raccoons-co/ethics";
 import {assert} from "chai";
-import {Any, Class, Method} from "../main/index";
+import TypeMock from "./given/TypeMock";
 
+@TestClass
 @Immutable
 export default class TypesTest {
 
+    protected readonly mock = new TypeMock();
+
     @Test
     private canUseAnyType() {
-        assert.isFunction(new TypesTest().any(TypesTest));
+        assert.isFunction(this.mock.any(TypesTest));
     }
 
     @Test
     private canUseClassType() {
-        assert.isFunction(new TypesTest().class(TypesTest));
+        assert.instanceOf(this.mock.class(TypesTest), TypesTest);
     }
 
     @Test
     private canUseMethodType() {
-        assert.isFunction(new TypesTest().method(new TypesTest().any));
-    }
-
-    public any(value: Any): Any {
-        return value;
-    }
-
-    public class(value: Class): Class {
-        return value;
-    }
-
-    public method(value: Method): Method {
-        return value;
+        assert.isFunction(this.mock.method(this.mock.any));
     }
 }

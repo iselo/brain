@@ -1,23 +1,21 @@
-import {Test} from "@raccoons-co/cleanway";
-import {Immutable} from "@raccoons-co/ethics"
+import {Test, TestClass} from "@raccoons-co/cleanway";
+import {Immutable} from "@raccoons-co/ethics";
 import {assert} from "chai";
-import AnnotationWithArgsMock from "./given/AnnotationWithArgsMock";
-import AnnotationMock from "./given/AnnotationMock";
+import ClassWithAnnotationMock from "./given/ClassWithAnnotationMock";
 
+@TestClass
 @Immutable
 export default class AnnotationTest {
 
+    private readonly mock = new ClassWithAnnotationMock();
+
     @Test
-    @AnnotationMock
-    public annotationZeroArgument(): string {
-        assert.equal(new AnnotationTest().annotationZeroArgument(), "originalValue");
-        return "originalValue";
+    public annotationZeroArgument(): void {
+        assert.equal(this.mock.sample(), "sample Sample value");
     }
 
     @Test
-    @AnnotationWithArgsMock("replacedValue")
-    public annotationOneArgument(): string {
-        assert.equal(new AnnotationTest().annotationZeroArgument(), "replacedValue");
-        return "originalValue";
+    public annotationOneArgument(): void {
+        assert.equal(this.mock.anotherSample(), "anotherSample is Nice Another sample value");
     }
 }
