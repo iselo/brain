@@ -3,13 +3,34 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/genera/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/genera/tree/master)
 
 >*Abstractions on top of Typescript 5.0.*
+
 Types:
-- *[Any](https://github.com/raccoons-co/genera/blob/0.0.3-rest/src/main/Any.ts)*
-- *[Class](https://github.com/raccoons-co/genera/blob/0.0.3-rest/src/main/Class.ts)*
-- *[Method](https://github.com/raccoons-co/genera/blob/0.0.3-rest/src/main/Method.ts)*
+- *[Any](https://github.com/raccoons-co/genera/blob/0.0.4-env/src/main/Any.ts)*
+- *[Class](https://github.com/raccoons-co/genera/blob/0.0.4-env/src/main/Class.ts)*
+- *[Method](https://github.com/raccoons-co/genera/blob/0.0.4-env/src/main/Method.ts)*
 
 Interface:
-- *[Annotation](https://github.com/raccoons-co/genera/blob/0.0.3-rest/src/main/Annotation.ts)*
+- *[Annotation](https://github.com/raccoons-co/genera/blob/0.0.4-env/src/main/Annotation.ts)*
+
+
+Decorator:
+- *[@EnvironmentVariable](https://github.com/raccoons-co/genera/blob/0.0.4-env/src/main/EnvironmentVariable.ts)*
+
+~~~TypeScript
+class MongoWorkerBuilder {
+
+    @EnvironmentVariable("MONGODB_ATLAS_HOST")
+    private host: string = "";
+
+    @EnvironmentVariable("MONGODB_ATLAS_CERT")
+    private tlsCertificate: string = "";
+
+    @EnvironmentVariable("MONGODB_ATLAS_KEY")
+    private tlsPrivateKey: string = "";
+
+    ...
+}
+~~~
 
 Install:
 ```shell script
