@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/genera",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Abstractions on top of Typescript 5.0.",
   "keywords": [
     "TypeScript",
