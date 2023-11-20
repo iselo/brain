@@ -1,17 +1,31 @@
-import {Test, TestClass} from "@raccoons-co/cleanway";
+import {BeforeEach, Test, TestClass} from "@raccoons-co/cleanway";
 import {assert} from "chai";
-import {EnvironmentVariable} from "../main";
-
-process.env.AWS_ACCOUNT_MOCK = "703521322927";
+import AwsEnvironmentMock from "./given/AwsEnvironmentMock";
 
 @TestClass
 export default class EnvironmentVariableTest {
 
-    @EnvironmentVariable("AWS_ACCOUNT_MOCK")
-    private readonly userEnvironmentVariable: string = "";
+    @BeforeEach
+    public setUp(): void {
+        process.env.AWS_ACCOUNT_MOCK = "703521322927";
+    }
 
     @Test
-    public setsClassFieldValue(): void {
-        assert.equal(this.userEnvironmentVariable, "703521322927");
+    public setsInitialValue(): void {
+        assert.equal(new AwsEnvironmentMock().region(), "us-east-1");
+    }
+
+    @Test
+    public setsValueFromUserEnvironment(): void {
+        process.env.AWS_REGION_MOCK = "us-west-1";
+        const awsEnvironment = new AwsEnvironmentMock();
+        assert.equal(awsEnvironment.region(), "us-west-1");
+        assert.equal(awsEnvironment.account(), "703521322927");
+    }
+
+    @Test
+    public throwsExceptionsIfUndefined(): void {
+        delete process.env.AWS_ACCOUNT_MOCK;
+        assert.throws(() => new AwsEnvironmentMock());
     }
 }

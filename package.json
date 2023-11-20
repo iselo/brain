@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/genera",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Abstractions on top of Typescript 5.0.",
   "keywords": [
     "TypeScript",
@@ -15,8 +15,8 @@
   "files": [
     "lib/"
   ],
-  "main": "lib/main/index.js",
-  "types": "lib/main/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raccoons-co/genera.git"
