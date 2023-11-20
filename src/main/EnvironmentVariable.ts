@@ -14,20 +14,17 @@ import ClassFieldDecorator from "./ClassFieldDecorator";
  * @param key - the name of the environment variable
  * @returns object - the decorator factory instance
  */
-export default function EnvironmentVariable(key: string) {
-    return new class DecoratorFactory {
+export default function environmentVariable(key: string): EnvironmentVariableDecoratorFactory {
+    return new class EnvironmentVariable implements EnvironmentVariableDecoratorFactory {
 
-        /** Returns decorator that replaces initial field value with value of user environment variable if defined. */
+        /** {@inheritDoc} */
         public orInitial(): Method {
             return new ClassFieldDecorator().decorator(
                 (initialValue: string) => process.env[key] ?? initialValue
             );
         }
 
-        /**
-         * Returns decorator that replaces initial field value with value of defined user environment variable
-         * otherwise throws `NullPointerException`.
-         */
+        /** {@inheritDoc} */
         public orElseThrow(): Method {
             return new ClassFieldDecorator().decorator(
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -35,4 +32,19 @@ export default function EnvironmentVariable(key: string) {
             );
         }
     };
+}
+
+interface EnvironmentVariableDecoratorFactory {
+
+    /**
+     * Returns decorator that replaces initial field value with value of user environment variable if defined
+     * otherwise keeps initialized value.
+     */
+    orInitial(): Method;
+
+    /**
+     * Returns decorator that replaces initial field value with value of user environment variable if defined
+     * otherwise throws `NullPointerException`.
+     */
+    orElseThrow(): Method;
 }
