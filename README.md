@@ -10,12 +10,12 @@ Class field decorator `@EnvironmentVariable`. Depends on TypeScript 5, Stage 3 E
 and does not requires the opt-in compiler flag called `--experimentalDecorators`.
 
 ~~~TypeScript
-export default class AwsEnvironmentMock {
+export default class AwsEnvironment {
 
-    @EnvironmentVariable("AWS_REGION_MOCK").orInitial()
+    @EnvironmentVariable.of("AWS_REGION").orElseInitial()
     private readonly awsRegion: string = "us-east-1";
 
-    @EnvironmentVariable("AWS_ACCOUNT_MOCK").orElseThrow()
+    @EnvironmentVariable.of("AWS_ACCOUNT").orElseThrow()
     private readonly awsAccount: string = "";
 
     public region(): string {
