@@ -7,6 +7,7 @@
 import {Strict} from "@raccoons-co/ethics";
 import {Method} from "@raccoons-co/genera";
 import ClassFieldDecorator from "./ClassFieldDecorator";
+import EnvironmentVariableDecoratorFactory from "./EnvironmentVariableDecoratorFactory";
 
 /**
  * The user environment variable.
@@ -38,19 +39,4 @@ export default class EnvironmentVariable {
             }
         };
     }
-}
-
-interface EnvironmentVariableDecoratorFactory {
-
-    /**
-     * Returns decorator that replaces initial field value with value of user environment variable if defined
-     * otherwise keeps initialized value.
-     */
-    orElseInitial(): Method;
-
-    /**
-     * Returns decorator that replaces initial field value with value of user environment variable if defined
-     * otherwise throws `NullPointerException`.
-     */
-    orElseThrow(): Method;
 }
