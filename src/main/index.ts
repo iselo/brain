@@ -1,5 +1,5 @@
 /**
- * © 2023 Raccoons. Developing a simple way to change.
+ * Copyright 2023 Raccoons. Developing a simple way to change.
  *
  * Set of abstractions on top of TypeScript 5.
  *
