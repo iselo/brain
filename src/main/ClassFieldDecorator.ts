@@ -10,6 +10,7 @@ import Annotation from "./Annotation";
 
 export default class ClassFieldDecorator implements Annotation {
 
+    /** Returns class field decorator of given initializer method. */
     decorator(initializer: Method): Method {
         return function newFieldInitializer(value: Any, context: ClassFieldDecoratorContext) {
             Strict.notNull(context);
