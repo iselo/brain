@@ -6,6 +6,11 @@
 
 import {Method} from "@raccoons-co/genera";
 
+/**
+ * Represents an user environment variable decorator factory.
+ *
+ * @internal
+ */
 export default interface EnvironmentVariableDecoratorFactory {
 
     /**

@@ -15,7 +15,7 @@ import EnvironmentVariableDecoratorFactory from "./EnvironmentVariableDecoratorF
 export default class EnvironmentVariable {
 
     /**
-     * Returns environment variable decorator factory instance.
+     * Returns environment variable decorator factory instance of given user environment variable name.
      *
      * @param name - the name of the environment variable
      * @returns object - the decorator factory instance

@@ -11,11 +11,13 @@ import Any from "./Any";
 import Class from "./Class";
 import Method from "./Method";
 import EnvironmentVariable from "./EnvironmentVariable";
+import EnvironmentVariableDecoratorFactory from "./EnvironmentVariableDecoratorFactory";
 
 export {
     Annotation,
     Any,
     Class,
     Method,
-    EnvironmentVariable
+    EnvironmentVariable,
+    EnvironmentVariableDecoratorFactory
 };
