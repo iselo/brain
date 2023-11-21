@@ -8,10 +8,10 @@ import {EnvironmentVariable} from "../../main";
 
 export default class AwsEnvironmentMock {
 
-    @EnvironmentVariable("AWS_REGION_MOCK").orInitial()
+    @EnvironmentVariable.of("AWS_REGION_MOCK").orElseInitial()
     private readonly awsRegion: string = "us-east-1";
 
-    @EnvironmentVariable("AWS_ACCOUNT_MOCK").orElseThrow()
+    @EnvironmentVariable.of("AWS_ACCOUNT_MOCK").orElseThrow()
     private readonly awsAccount: string = "";
 
     public region(): string {
